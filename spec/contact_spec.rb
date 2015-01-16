@@ -66,7 +66,7 @@ describe(Contact) do
       new_contact1.save()
       new_contact2 = Contact.new({:name => 'Steve Two Two', :phone_number => '971-678-6077'})
       new_contact2.save()
-      expect(Contact.find_phone(new_contact1.phone_number())).to(eq(new_contact1))
+      expect(Contact.find_contact(new_contact1.name())).to(eq(new_contact1))
     end
   end
 end
