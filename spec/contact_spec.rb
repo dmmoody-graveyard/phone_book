@@ -2,6 +2,10 @@ require('rspec')
 require('contact')
 
 describe(Contact) do
+
+  before() do
+    Contact.clear()
+  end
   
   describe('#name') do
     it('will take name and phone_number as hash and return name') do
@@ -23,7 +27,7 @@ describe(Contact) do
     end
   end
 
-  describe('.save') do
+  describe('#save') do
     it("will save contact to contact list") do
       new_contact = Contact.new({:name => 'Duane Moody', :phone_number => '971-678-9823'})
       new_contact.save()
