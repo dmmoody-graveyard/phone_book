@@ -27,6 +27,13 @@ describe(Contact) do
     end
   end
 
+  describe('#id') do
+    it('returns the id of the contact') do
+      new_contact = Contact.new({:name => 'Duane Moody', :phone_number => '971-678-9823'})
+      expect(new_contact.id()).to(eq(1))
+    end
+  end
+
   describe('#save') do
     it("will save contact to contact list") do
       new_contact = Contact.new({:name => 'Duane Moody', :phone_number => '971-678-9823'})
