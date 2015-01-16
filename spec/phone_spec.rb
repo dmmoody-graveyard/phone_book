@@ -51,4 +51,13 @@ describe(Phone) do
     end
   end
 
+  describe('#find_number') do
+    it('find number by phone_type') do
+      new_phone = Phone.new({:phone_type => 'mobile', :number => '971-678-9823'})
+      new_phone.save()
+      expect(Phone.find_number(new_phone.phone_type())).to(eq(new_phone))
+    end
+  end
+  
+
 end
