@@ -10,4 +10,11 @@ describe(Phone) do
     end
   end
 
+  describe('#number') do
+    it('takes a phone_type and number and returns value of number') do
+      new_phone = Phone.new({:phone_type => 'mobile', :number => '971-678-9823'})
+      expect(new_phone.number()).to(eq('971-678-9823'))
+    end
+  end
+
 end
