@@ -16,4 +16,11 @@ describe(Contact) do
       expect(new_contact.phone_number()).to(eq("971-678-9823"))
     end
   end
+
+  describe('#add_contact') do
+    it("will add contact to contact list") do
+      new_contact = Contact.new({:name => 'Duane Moody', :phone_number => '971-678-9823'})
+      expect(new_contact.add()).to(eq(@@contact_list))
+    end
+  end
 end
