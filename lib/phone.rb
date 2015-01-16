@@ -26,4 +26,14 @@ class Phone
     @@phones = []
   end
 
+  define_singleton_method(:find_number) do |phone_type|
+    found_phone = nil
+    @@phones.each() do |phone|
+      if phone.phone_type().eql?(phone_type)
+        found_phone = phone
+      end
+    end
+    found_phone
+  end
+
 end
