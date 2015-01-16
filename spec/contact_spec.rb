@@ -17,17 +17,25 @@ describe(Contact) do
     end
   end
 
-  describe('#all') do
+  describe('.all') do
     it('will return all contacts in contact list') do
       expect(Contact.all()).to(eq([]))
     end
   end
 
-  describe('#save') do
+  describe('.save') do
     it("will save contact to contact list") do
       new_contact = Contact.new({:name => 'Duane Moody', :phone_number => '971-678-9823'})
       new_contact.save()
-      expect(Contact.all()).to(eq(new_contact))
+      expect(Contact.all()).to(eq([new_contact]))
+    end
+  end
+
+  describe('.clear') do
+    it('will clear contact list of all elements') do
+      new_contact = Contact.new({:name => 'Duane Moody', :phone_number => '971-678-9823'})
+      new_contact.save()
+      expect(Contact.clear()).to(eq([]))
     end
   end
 end
