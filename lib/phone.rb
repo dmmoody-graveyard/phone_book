@@ -7,10 +7,11 @@ class Phone
   define_method(:initialize) do |attributes|
     @phone_type = attributes.fetch(:phone_type)
     @number = attributes.fetch(:number)
+    @id = @@phones.length().+(1)
   end
 
-  define_method(:phone) do
-    @phone_type
+  define_method(:id) do
+    @id
   end
 
   define_singleton_method(:all) do

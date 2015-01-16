@@ -7,10 +7,10 @@ describe(Phone) do
     Phone.clear()
   end
   
-  describe('#phone') do
+  describe('#phone_type') do
     it('takes a phone_type and number and returns value of phone_type') do
       new_phone = Phone.new({:phone_type => 'mobile', :number => '971-678-9823'})
-      expect(new_phone.phone()).to(eq('mobile'))
+      expect(new_phone.phone_type()).to(eq('mobile'))
     end
   end
 
@@ -18,6 +18,13 @@ describe(Phone) do
     it('takes a phone_type and number and returns value of number') do
       new_phone = Phone.new({:phone_type => 'mobile', :number => '971-678-9823'})
       expect(new_phone.number()).to(eq('971-678-9823'))
+    end
+  end
+
+  describe('#id') do
+    it('returns phone id') do
+      new_phone = Phone.new({:phone_type => 'mobile', :number => '971-678-9823'})
+      expect(new_phone.id()).to(eq(1))
     end
   end
 
