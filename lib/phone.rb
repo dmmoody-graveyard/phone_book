@@ -21,4 +21,8 @@ class Phone
     @@phones.push(self)
   end
 
+  define_singleton_method(:clear) do
+    @@phones = []
+  end
+
 end
