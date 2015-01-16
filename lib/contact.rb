@@ -45,4 +45,8 @@ class Contact
     found_contact
   end
 
+  define_method(:add_phone_numbers) do |phone|
+    @phone_numbers.push(phone)
+  end
+
 end

@@ -76,7 +76,7 @@ describe(Contact) do
       new_contact = Contact.new('Duane Moody')
       new_phone = Phone.new({:phone_type => 'mobile', :number => '971-678-9823'})
       new_contact.add_phone_numbers(new_phone)
-      expect(new_contact.phone_numbers()).to(eq(new_phone))
+      expect(new_contact.phone_numbers()).to(eq([new_phone]))
     end
   end
 
