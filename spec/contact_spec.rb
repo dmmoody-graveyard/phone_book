@@ -27,7 +27,7 @@ describe(Contact) do
     it("will save contact to contact list") do
       new_contact = Contact.new({:name => 'Duane Moody', :phone_number => '971-678-9823'})
       new_contact.save()
-      expect(Contact.all()).to(eq([]))
+      expect(Contact.all()).to(eq(new_contact))
     end
   end
 end
