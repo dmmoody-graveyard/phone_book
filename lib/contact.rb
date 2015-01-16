@@ -25,7 +25,7 @@ class Contact
     @@contacts = []
   end
 
-  define_singleton_method(:find) do |id|
+  define_singleton_method(:find_id) do |id|
     found_contact = nil
     @@contacts.each() do |contact|
       if contact.id().eql?(id.to_i)

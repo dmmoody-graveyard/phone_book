@@ -50,13 +50,23 @@ describe(Contact) do
     end
   end
 
-  describe('.find') do
+  describe('.find_id') do
     it('will find a contact by id number') do
       new_contact1 = Contact.new({:name => 'Duane Moody', :phone_number => '971-678-9823'})
       new_contact1.save()
       new_contact2 = Contact.new({:name => 'Steve Two Two', :phone_number => '971-678-6077'})
       new_contact2.save()
-      expect(Contact.find(new_contact1.id())).to(eq(new_contact1))
+      expect(Contact.find_id(new_contact1.id())).to(eq(new_contact1))
+    end
+  end
+
+  describe('.find_phone') do
+    it('will find a contact by ') do
+      new_contact1 = Contact.new({:name => 'Duane Moody', :phone_number => '971-678-9823'})
+      new_contact1.save()
+      new_contact2 = Contact.new({:name => 'Steve Two Two', :phone_number => '971-678-6077'})
+      new_contact2.save()
+      expect(Contact.find_phone(new_contact1.phone_number())).to(eq(new_contact1))
     end
   end
 end
