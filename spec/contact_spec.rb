@@ -43,13 +43,4 @@ describe(Contact) do
     end
   end
 
-  describe('#contact_names') do
-    it('will list all contact names in contacts') do
-      new_contact1 = Contact.new({:name => 'Duane Moody', :phone_number => '971-678-9823'})
-      new_contact1.save()
-      new_contact2 = Contact.new({:name => 'Steve Two Two', :phone_number => '971-678-6077'})
-      new_contact2.save()
-      expect(Contact.contact_names()).to(eq(["Duane Moody", "Steve Two Two"]))
-    end
-  end
 end
