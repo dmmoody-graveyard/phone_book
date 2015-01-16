@@ -24,4 +24,12 @@ describe(Phone) do
     end
   end
 
+  describe('save') do
+    it('save phone in Phone phone list') do
+      new_phone = Phone.new({:phone_type => 'mobile', :number => '971-678-9823'})
+      new_phone.save()
+      expect(Phone.all()).to(eq([new_phone]))
+    end
+  end
+
 end

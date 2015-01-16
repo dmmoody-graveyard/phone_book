@@ -17,4 +17,8 @@ class Phone
     @@phones
   end
 
+  define_method(:save) do
+    @@phones.push(self)
+  end
+
 end
