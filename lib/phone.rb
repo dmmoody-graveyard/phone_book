@@ -1,4 +1,6 @@
 class Phone
+  
+  @@phones = []
 
   attr_reader(:phone_type, :number)
 
@@ -10,4 +12,9 @@ class Phone
   define_method(:phone) do
     @phone_type
   end
+
+  define_singleton_method(:all) do
+    @@phones
+  end
+
 end

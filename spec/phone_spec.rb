@@ -17,4 +17,11 @@ describe(Phone) do
     end
   end
 
+  describe('.all') do
+    it('return all phones') do
+      new_phone = Phone.new({:phone_type => 'mobile', :number => '971-678-9823'})
+      expect(Phone.all()).to(eq([]))
+    end
+  end
+
 end
