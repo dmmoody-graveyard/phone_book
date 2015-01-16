@@ -1,5 +1,6 @@
 require('rspec')
 require('contact')
+require('phone')
 
 describe(Contact) do
 
@@ -69,4 +70,14 @@ describe(Contact) do
       expect(Contact.find_contact(new_contact1.name())).to(eq(new_contact1))
     end
   end
+
+  describe('#add_phone_numbers') do
+    it('will add_phone_numbers to contact list') do
+      new_contact = Contact.new('Duane Moody')
+      new_phone = Phone.new({:phone_type => 'mobile', :number => '971-678-9823'})
+      new_contact.add_phone_numbers(new_phone)
+      expect(new_contact.phone_numbers()).to(eq(new_phone))
+    end
+  end
+
 end
