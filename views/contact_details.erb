@@ -1,8 +1,15 @@
 <h1><%= @contact.name() %></h1>
 
+<address>
+  <%= @contact.name() %><br>
+
+
+</address>
+
 <h1>Add a New Phone Number</h1>
 
-<form action='/success' method="post">
+<form action='/phone_success' method="post">
+  <input id='contact_id' name='contact_id' type='hidden' value='<%= @contact.id() %>'>
   <div class="form-group">
     <label for="phone_type">What Type of Phone</label>
     <input id="phone_type" name="phone_type" class="form-control" type="text">

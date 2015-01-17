@@ -9,13 +9,13 @@ get('/') do
   erb(:index)
 end
 
-get('/add_contact') do
-  erb(:add_contact_form)
-end
-
 get('/contact_details/:contact_id') do
   @contact = Contact.find_id(params.fetch('contact_id').to_i())
   erb(:contact_details)
+end
+
+get('/add_contact') do
+  erb(:add_contact_form)
 end
 
 post('/contact_success') do
@@ -27,7 +27,8 @@ end
 post('/phone_success') do
   phone_type = params.fetch('phone_type')
   number = params.fetch('number')
-  new_phone = Phone.new(:type => phone_type, :number => number)
+  contact_id = params.fetch('contact_id').to_i()
+  new_phone = Phone.new({:type => phone_type, :number => number})
   new_phone.save()
-  redirect('/')
+  redirect('/contact_details/:contact_id')
 end
