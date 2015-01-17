@@ -10,11 +10,7 @@
     <% @contacts.each() do |contact| %>
       <tr>
         <td><%= contact.name() %></td>
-        <td>
-          <form action="/<%= contact.id() %>" method="post">
-            <button type='submit' class="btn btn-default btn-xs">Contact Details</button>
-          </form>
-        </td>
+        <td><a href="/contact_details/<%= contact.id() %>">Contact Detais</a></td>
       </tr>
     <% end %>
   </table>

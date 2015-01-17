@@ -13,9 +13,8 @@ get('/add_contact') do
   erb(:add_contact_form)
 end
 
-get('/:content_id') do
-  contact_id = params.fetch('content_id'.to_i())
-  @contact = Content.find_id(contact_id)
+get('/contact_details/:contact_id') do
+  @contact = Contact.find_id(params.fetch('contact_id').to_i())
   erb(:contact_details)
 end
 
